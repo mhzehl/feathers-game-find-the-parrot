@@ -1,7 +1,7 @@
 {
   "host": "localhost",
   "port": 3030,
-  "mongodb": "mongodb://localhost:27017/recipesApi",
+  "mongodb": "mongodb://localhost:27017/gamesApi",
   "public": "../public/",
   "auth": {
     "token": {

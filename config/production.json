@@ -1,5 +1,5 @@
 {
-  "host": "recipes-api-app.feathersjs.com",
+  "host": "games-api-app.feathersjs.com",
   "port": 80,
   "mongodb": "DATABASE_URL",
   "public": "../public/",

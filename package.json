@@ -1,6 +1,6 @@
 {
-  "name": "recipes-api",
-  "description": "API for the recipes app",
+  "name": "games-api",
+  "description": "API for the games app",
   "version": "0.0.0",
   "homepage": "",
   "main": "src/",
