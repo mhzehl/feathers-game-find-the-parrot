@@ -11,13 +11,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const goalSchema = new Schema({
-  objective = { type: String, required: true }
+  objective: { type: String, required: true }
 });
 
 const tileSchema = new Schema({
-  objective = [ goalSchema ]
-  image: { type: String, required: true }
-  clicked: { type: Boolean, required: true }
+  objective: [ goalSchema ],
+  image: { type: String, required: true },
+  clicked: { type: Boolean, required: true },
 })
 
 const playerSchema = new Schema({
@@ -34,7 +34,7 @@ const gameSchema = new Schema({
   secondPlayerId: { type: Schema.Types.ObjectId, ref: 'user' },
   readyToStart: { type: Boolean, 'default': false },
   started: { type: Boolean, 'default': false },
-  activeTurn: { type: Schema.Types.ObjectId, ref: 'user' },
+  activeRound: { type: Schema.Types.ObjectId, ref: 'user' },
   winner: { type: Number, required: false },
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
