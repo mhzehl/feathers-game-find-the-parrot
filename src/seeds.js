@@ -25,10 +25,9 @@ const games = [
   {
     title: 'Battle 1',
     players: [
-      { userId: 1, color: 'green', name: 'Richard'},
-      { userId: 2, color: 'blue', name: 'Melvin' }
+      { userId: 2, color: 'green', name: 'Richard'},
+      { userId: 3, color: 'blue', name: 'Melvin' }
     ],
-    tiles: [ tileSchema ],
     readyToStart: false,
     started: false,
   },
@@ -38,7 +37,6 @@ const games = [
       { userId: 1, color: 'green', name: 'Richard'},
       { userId: 2, color: 'blue', name: 'Melvin' }
     ],
-    tiles: [ tileSchema ],
     readyToStart: true,
     started: true,
   },
