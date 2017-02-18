@@ -16,7 +16,7 @@ const goalSchema = new Schema({
 
 const tileSchema = new Schema({
   objective: [ goalSchema ],
-  image: { type: String, required: true },
+  parrot: { type: String, required: true },
   clicked: { type: Boolean, required: true },
 })
 
