@@ -10,11 +10,34 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const goalSchema = new Schema({
+  objective = { type: String, required: true }
+});
+
+const tileSchema = new Schema({
+  objective = [ goalSchema ]
+  image: { type: String, required: true }
+  clicked: { type: Boolean, required: true }
+})
+
+const playerSchema = new Schema({
+  userId: { type: Schema.Types.ObjectId, ref: 'user' },
+  color: { type: String, required: false },
+  name: { type: String, required: true },
+});
+
 const gameSchema = new Schema({
   title: { type: String, required: true },
-  authorId: { type: Schema.Types.ObjectId, ref: 'user' },
+  players: [ playerSchema ],
+  tiles: [ tileSchema ],
+  hostId: { type: Schema.Types.ObjectId, ref: 'user' },
+  secondPlayerId: { type: Schema.Types.ObjectId, ref: 'user' },
+  readyToStart: { type: Boolean, 'default': false },
+  started: { type: Boolean, 'default': false },
+  activeTurn: { type: Schema.Types.ObjectId, ref: 'user' },
+  winner: { type: Number, required: false },
   createdAt: { type: Date, 'default': Date.now },
-  updatedAt: { type: Date, 'default': Date.now }
+  updatedAt: { type: Date, 'default': Date.now },
 });
 
 const gameModel = mongoose.model('game', gameSchema);
