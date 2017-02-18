@@ -21,7 +21,28 @@ const user = {
   password: 'abcd1234'
 }
 
-const games = []
+const games = [
+  {
+    title: 'Battle 1',
+    players: [
+      { userId: 1, color: 'green', name: 'Richard'},
+      { userId: 2, color: 'blue', name: 'Melvin' }
+    ],
+    tiles: [ tileSchema ],
+    readyToStart: false,
+    started: false,
+  },
+  {
+    title: 'Battle 2',
+    players: [
+      { userId: 1, color: 'green', name: 'Richard'},
+      { userId: 2, color: 'blue', name: 'Melvin' }
+    ],
+    tiles: [ tileSchema ],
+    readyToStart: true,
+    started: true,
+  },
+]
 
 // Seed the user and game!
 userService.create(user)
