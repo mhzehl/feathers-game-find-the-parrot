@@ -24,19 +24,11 @@ const user = {
 const games = [
   {
     title: 'Battle 1',
-    players: [
-      { userId: 2, color: 'green', name: 'Richard'},
-      { userId: 3, color: 'blue', name: 'Melvin' }
-    ],
     readyToStart: false,
     started: false,
   },
   {
     title: 'Battle 2',
-    players: [
-      { userId: 1, color: 'green', name: 'Richard'},
-      { userId: 2, color: 'blue', name: 'Melvin' }
-    ],
     readyToStart: true,
     started: true,
   },
