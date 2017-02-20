@@ -10,14 +10,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const goalSchema = new Schema({
-  objective: { type: String, required: false }
-});
-
 const tileSchema = new Schema({
-  objective: [ goalSchema ],
   parrot: { type: String, required: false },
-  clicked: { type: Boolean, required: false },
 })
 
 const playerSchema = new Schema({
