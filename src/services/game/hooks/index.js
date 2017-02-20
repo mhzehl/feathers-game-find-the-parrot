@@ -10,6 +10,7 @@ const assignHost = require('./assign-host');
 // after hook: look up the user with the matching hostId in the users service and add it as 'host'
 const populateHost = common.populate('host', { service: 'users', field: 'hostId' });
 
+const joinGame = require('./join-game');
 const makeLikeable = require('./make-likeable');
 
 exports.before = {
@@ -26,6 +27,7 @@ exports.before = {
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
+    joinGame(),
   ],
   patch: [
     auth.verifyToken(),
