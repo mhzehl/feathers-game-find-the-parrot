@@ -20,6 +20,7 @@ exports.before = {
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
+    assignHost(),
   ],
   update: [
     auth.verifyToken(),
