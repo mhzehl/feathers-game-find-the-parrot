@@ -5,11 +5,10 @@ const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
 const common = require('feathers-hooks-common');
 
-// before hook: assign authorId to the _id of the currently logged in user.
-const assignAuthor = require('./assign-author');
-// after hook: look up the user with the matching authorId in the users service and add it as 'author'
-const populateAuthor = common.populate('author', { service: 'users', field: 'authorId' });
-const populateLikes = common.populate('likes', { service: 'users', field: 'likedBy' })
+// before hook: assign hostId to the _id of the currently logged in user.
+const assignHost = require('./assign-host');
+// after hook: look up the user with the matching hostId in the users service and add it as 'host'
+const populateHost = common.populate('host', { service: 'users', field: 'hostId' });
 
 const makeLikeable = require('./make-likeable');
 
@@ -21,19 +20,16 @@ exports.before = {
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
-    assignAuthor()
   ],
   update: [
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
-    makeLikeable(),
   ],
   patch: [
     auth.verifyToken(),
     auth.populateUser(),
     auth.restrictToAuthenticated(),
-    makeLikeable(),
   ],
   remove: [
     auth.verifyToken(),
@@ -44,8 +40,7 @@ exports.before = {
 
 exports.after = {
   all: [
-    populateAuthor,
-    populateLikes,
+    populateHost,
   ],
   find: [],
   get: [],
