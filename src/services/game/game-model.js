@@ -22,6 +22,7 @@ const tileSchema = new Schema({
 
 const playerSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'user' },
+  initials: { type: String, required: true },
   color: { type: String, required: false },
   name: { type: String, required: true },
 });
