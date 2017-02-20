@@ -11,24 +11,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const goalSchema = new Schema({
-  objective: { type: String, required: true }
+  objective: { type: String, required: false }
 });
 
 const tileSchema = new Schema({
   objective: [ goalSchema ],
-  parrot: { type: String, required: true },
-  clicked: { type: Boolean, required: true },
+  parrot: { type: String, required: false },
+  clicked: { type: Boolean, required: false },
 })
 
 const playerSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'user' },
-  initials: { type: String, required: true },
+  initials: { type: String, required: false },
   color: { type: String, required: false },
-  name: { type: String, required: true },
+  name: { type: String, required: false },
 });
 
 const gameSchema = new Schema({
-  title: { type: String, required: true },
+  title: { type: String, required: false },
   players: [ playerSchema ],
   tiles: [ tileSchema ],
   hostId: { type: Schema.Types.ObjectId, ref: 'user' },
