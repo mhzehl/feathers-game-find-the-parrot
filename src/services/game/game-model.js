@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const tileSchema = new Schema({
-  parrot: { type: String, required: false },
+  parrots: { type: Number, required: false },
 })
 
 const playerSchema = new Schema({
@@ -25,6 +25,7 @@ const gameSchema = new Schema({
   title: { type: String, required: false },
   players: [ Schema.Types.ObjectId ],
   tiles: [ tileSchema ],
+  parrots: [],
   hostId: { type: Schema.Types.ObjectId, ref: 'user' },
   secondPlayerId: { type: Schema.Types.ObjectId, ref: 'user' },
   readyToStart: { type: Boolean, 'default': false },
