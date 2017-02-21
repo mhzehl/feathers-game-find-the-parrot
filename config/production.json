@@ -1,7 +1,7 @@
 {
-  "host": "games-api-app.feathersjs.com",
-  "port": 80,
-  "mongodb": "DATABASE_URL",
+  "host": "find-the-parrot",
+  "port": "PORT",
+  "mongodb": "MONGODB_URL",
   "public": "../public/",
   "auth": {
     "token": {
