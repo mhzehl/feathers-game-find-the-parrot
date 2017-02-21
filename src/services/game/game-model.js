@@ -23,7 +23,7 @@ const playerSchema = new Schema({
 
 const gameSchema = new Schema({
   title: { type: String, required: false },
-  players: [ playerSchema ],
+  players: [ Schema.Types.ObjectId ],
   tiles: [ tileSchema ],
   hostId: { type: Schema.Types.ObjectId, ref: 'user' },
   secondPlayerId: { type: Schema.Types.ObjectId, ref: 'user' },
